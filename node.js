@@ -85,14 +85,10 @@
 
 // deleteFile("example.txt");
 
-
 // import chalk from 'chalk';
 
 // console.log(chalk.red('Error'));
 // console.log(chalk.green('Succesfull'));
-
-
-
 
 // import figlet from 'figlet';
 
@@ -105,11 +101,6 @@
 //   console.log(data);
 // });
 
-
-
-
-
-
 // import ora from 'ora';
 
 // const spinner = ora('Loading unicorns').start();
@@ -118,12 +109,6 @@
 // 	spinner.color = 'yellow';
 // 	spinner.text = 'Loading rainbows';
 // }, 1000);
-
-
-
-
-
-
 
 // import pokemon from 'pokemon';
 
@@ -139,16 +124,12 @@
 // pokemon.getId('Dratini');
 // //=> 147
 
-
-
-
-
 // import { faker } from '@faker-js/faker';
 
 // export function createRandomUser() {
 //   return {
 //     userId: faker.string.uuid(),
-//     username: faker.internet.username(), 
+//     username: faker.internet.username(),
 //     email: faker.internet.email(),
 //     avatar: faker.image.avatar(),
 //     password: faker.internet.password(),
@@ -160,11 +141,6 @@
 // export const users = faker.helpers.multiple(createRandomUser, {
 //   count: 5,
 // }); console.log(createRandomUser());
-
-
-
-
-
 
 // import inquirer from 'inquirer';
 
@@ -183,9 +159,6 @@
 //     }
 //   });
 
-
-
-
 // import cowsay from 'cowsay';
 
 // console.log(cowsay.say({
@@ -197,14 +170,9 @@
 
 // console.log(say({ text: 'grazing in the browser' }));
 
-
-
-
-
-
 // var player = require('play-sound')(opts = {})
 
-// // $ mplayer foo.mp3 
+// // $ mplayer foo.mp3
 // player.play('foo.mp3', function(err){
 //   if (err) throw err
 // })
@@ -225,99 +193,198 @@
 // })
 // audio.kill()
 
+// import { generate, count } from "random-words";
 
-import { generate, count } from "random-words";
+// console.log(generate());
+// //output: 'army'
 
-console.log(generate());
-//output: 'army'
+// console.log(generate(5));
+// //output: ['army', 'beautiful', 'became', 'if', 'actually']
 
-console.log(generate(5));
-//output: ['army', 'beautiful', 'became', 'if', 'actually']
+// console.log(generate({ minLength: 2 }));
+// //output: 'hello'
 
-console.log(generate({ minLength: 2 }));
-//output: 'hello'
+// console.log(generate({ maxLength: 6 }));
+// //output: 'blue'
 
-console.log(generate({ maxLength: 6 }));
-//output: 'blue'
+// console.log(generate({ minLength: 5, maxLength: 5 }));
+// //output : 'world'
 
-console.log(generate({ minLength: 5, maxLength: 5 }));
-//output : 'world'
+// console.log(generate({ minLength: 11, maxLength: 10000 })); //maxLength limited to the longest possible word
+// //output: 'environment'
 
-console.log(generate({ minLength: 11, maxLength: 10000 })); //maxLength limited to the longest possible word
-//output: 'environment'
+// console.log(generate({ minLength: 10000, maxLength: 5 })); //minLength limited to the maxLength
+// //output: 'short'
 
-console.log(generate({ minLength: 10000, maxLength: 5 })); //minLength limited to the maxLength
-//output: 'short'
+// console.log(generate({ min: 3, max: 10 }));
+// //output: ['became', 'arrow', 'article', 'therefore']
 
-console.log(generate({ min: 3, max: 10 }));
-//output: ['became', 'arrow', 'article', 'therefore']
+// console.log(generate({ exactly: 2 }));
+// //output: ['beside', 'between']
 
-console.log(generate({ exactly: 2 }));
-//output: ['beside', 'between']
+// console.log(generate({ min: 2, max: 3, seed: "my-seed" }));
+// //output: ['plenty', 'pure']
 
-console.log(generate({ min: 2, max: 3, seed: "my-seed" }));
-//output: ['plenty', 'pure']
+// // this call will yield exactly the same results as the last since the same `seed` was used and the other inputs are identical
+// console.log(generate({ min: 2, max: 3, seed: "my-seed" }));
+// //output: ['plenty', 'pure']
 
-// this call will yield exactly the same results as the last since the same `seed` was used and the other inputs are identical
-console.log(generate({ min: 2, max: 3, seed: "my-seed" }));
-//output: ['plenty', 'pure']
+// console.log(generate({ exactly: 5, join: " " }));
+// //output: 'army beautiful became if exactly'
 
-console.log(generate({ exactly: 5, join: " " }));
-//output: 'army beautiful became if exactly'
+// console.log(generate({ exactly: 5, join: "" }));
+// //output: 'armybeautifulbecameifexactly'
 
-console.log(generate({ exactly: 5, join: "" }));
-//output: 'armybeautifulbecameifexactly'
+// console.log(generate({ exactly: 2, minLength: 4 }));
+// //output: ['atom', 'window']
 
-console.log(generate({ exactly: 2, minLength: 4 }));
-//output: ['atom', 'window']
+// console.log(generate({ exactly: 5, maxLength: 4 }));
+// //output: ['army', 'come', 'eye', 'five', 'fur']
 
-console.log(generate({ exactly: 5, maxLength: 4 }));
-//output: ['army', 'come', 'eye', 'five', 'fur']
+// console.log(generate({ exactly: 2, minLength: 3, maxLength: 3 }));
+// //output: ['you, 'are']
 
-console.log(generate({ exactly: 2, minLength: 3, maxLength: 3 }));
-//output: ['you, 'are']
+// console.log(generate({ exactly: 3, minLength: 5, maxLength: 100000 }));
+// //output: ['understanding', 'should', 'yourself']
 
-console.log(generate({ exactly: 3, minLength: 5, maxLength: 100000 }));
-//output: ['understanding', 'should', 'yourself']
+// console.log(generate({ exactly: 5, wordsPerString: 2 }));
+// //output: [ 'salt practical', 'also brief', 'country muscle', 'neighborhood beyond', 'grew pig' ]
 
-console.log(generate({ exactly: 5, wordsPerString: 2 }));
-//output: [ 'salt practical', 'also brief', 'country muscle', 'neighborhood beyond', 'grew pig' ]
+// console.log(generate({ exactly: 5, wordsPerString: 2, separator: "-" }));
+// //output: [ 'equator-variety', 'salt-usually', 'importance-becoming', 'stream-several', 'goes-fight' ]
 
-console.log(generate({ exactly: 5, wordsPerString: 2, separator: "-" }));
-//output: [ 'equator-variety', 'salt-usually', 'importance-becoming', 'stream-several', 'goes-fight' ]
+// console.log(
+//   generate({
+//     exactly: 5,
+//     wordsPerString: 2,
+//     formatter: (word) => word.toUpperCase(),
+//   })
+// );
+// //output: [ 'HAVING LOAD', 'LOST PINE', 'GAME SLOPE', 'SECRET GIANT', 'INDEED LOCATION' ]
 
-console.log(
-  generate({
-    exactly: 5,
-    wordsPerString: 2,
-    formatter: (word) => word.toUpperCase(),
-  })
-);
-//output: [ 'HAVING LOAD', 'LOST PINE', 'GAME SLOPE', 'SECRET GIANT', 'INDEED LOCATION' ]
+// console.log(
+//   generate({
+//     exactly: 5,
+//     wordsPerString: 2,
+//     formatter: (word, index) => {
+//       return index === 0
+//         ? word.slice(0, 1).toUpperCase().concat(word.slice(1))
+//         : word;
+//     },
+//   })
+// );
+// //output: [ 'Until smoke', 'Year strength', 'Pay knew', 'Fallen must', 'Chief arrow' ]
 
-console.log(
-  generate({
-    exactly: 5,
-    wordsPerString: 2,
-    formatter: (word, index) => {
-      return index === 0
-        ? word.slice(0, 1).toUpperCase().concat(word.slice(1))
-        : word;
-    },
-  })
-);
-//output: [ 'Until smoke', 'Year strength', 'Pay knew', 'Fallen must', 'Chief arrow' ]
+// console.log(count());
+// //output: 1952
 
-console.log(count());
-//output: 1952
+// console.log(count({ minLength: 5 }));
+// //output: 1318
 
-console.log(count({ minLength: 5 }));
-//output: 1318 
+// console.log(count({ maxLength: 7 }));
+// //output: 1649
 
-console.log(count({ maxLength: 7 }));
-//output: 1649
+// console.log(count({ minLength: 5, maxLength: 7 }));
+// //output: 1015
 
-console.log(count({ minLength: 5, maxLength: 7 }));
-//output: 1015
+import inquirer from "inquirer";
+import { faker } from "@faker-js/faker";
+import qrImage from "qr-image";
+import fs from "fs";
 
+// Function to generate user profile data
+function generateUserProfiles(count) {
+  const profiles = [];
+  for (let i = 0; i < count; i++) {
+    const name = faker.person.fullName(); // Updated to use faker.person.fullName()
+    const email = faker.internet.email();
+    const avatarUrl = faker.image.avatar();
 
+    // Generate QR code
+    const qrCodeData = qrImage.imageSync(`https://www.example.com/${email}`, {
+      type: "png",
+    });
+    fs.writeFileSync(`qr-code-${i + 1}.png`, qrCodeData); // Saving QR code image
+
+    profiles.push({
+      name,
+      email,
+      avatar: avatarUrl,
+      qrCode: `qr-code-${i + 1}.png`, // Link to the saved QR code
+    });
+  }
+  return profiles;
+}
+
+// Function to generate company info
+function generateCompanyInfo(count) {
+  const companies = [];
+  for (let i = 0; i < count; i++) {
+    companies.push({
+      name: faker.company.name(),
+      industry: faker.company.industry(),
+      address: faker.address.streetAddress(),
+      city: faker.address.city(),
+      country: faker.address.country(),
+    });
+  }
+  return companies;
+}
+
+// Function to generate product details
+function generateProductDetails(count) {
+  const products = [];
+  for (let i = 0; i < count; i++) {
+    products.push({
+      productName: faker.commerce.productName(),
+      price: faker.commerce.price(),
+      category: faker.commerce.department(),
+      sku: faker.random.alphaNumeric(8),
+    });
+  }
+  return products;
+}
+
+// Inquirer questions to gather user input
+const questions = [
+  {
+    type: "list",
+    name: "dataType",
+    message: "What type of data would you like to generate?",
+    choices: ["User Profile", "Company Info", "Product Details"],
+  },
+  {
+    type: "number",
+    name: "count",
+    message: "How many entries would you like?",
+    default: 1,
+  },
+];
+
+// Main function to prompt user and generate data
+async function main() {
+  const answers = await inquirer.prompt(questions);
+
+  let generatedData = [];
+
+  switch (answers.dataType) {
+    case "User Profile":
+      generatedData = generateUserProfiles(answers.count);
+      break;
+    case "Company Info":
+      generatedData = generateCompanyInfo(answers.count);
+      break;
+    case "Product Details":
+      generatedData = generateProductDetails(answers.count);
+      break;
+    default:
+      console.log("Invalid choice");
+  }
+
+  // Display the generated data
+  console.log("\nGenerated Data:");
+  console.log(JSON.stringify(generatedData, null, 2));
+}
+
+// Run the main function
+main();
